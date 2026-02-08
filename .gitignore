@@ -137,3 +137,17 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Temp
+tmp/
+temp/
+
+# pnpm
+.pnpm-store/
+
+# Turborepo
+.turbo/
