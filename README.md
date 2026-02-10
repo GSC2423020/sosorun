@@ -45,10 +45,12 @@ using NestJS.
 
 ```bash
 .
-├── frontend/
-├── backend/
-│   ├── src/
-│   └── test/
-├── docker/
+├── apps/
+│   ├── web/        # Next.js
+│   └── api/        # NestJS
+├── infra/
+│   ├── nginx/
+│   └── mysql/
 ├── docs/
+├── .gitignore
 └── README.md
