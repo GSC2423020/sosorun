@@ -1,0 +1,12 @@
+{
+  "name": "sosorun",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter @sosorun/web dev",
+    "dev:api": "pnpm --filter @sosorun/api start:dev"
+  }
+}
