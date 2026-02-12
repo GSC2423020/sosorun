@@ -28,7 +28,7 @@ using NestJS.
 - NestJS
 
 ### Database
-- MySQL
+- PostgreSQL
 
 ### Infra / DevOps
 - Docker
@@ -50,7 +50,7 @@ using NestJS.
 │   └── api/        # NestJS
 ├── infra/
 │   ├── nginx/
-│   └── mysql/
+│   └── postgres/
 ├── docs/
 ├── .gitignore
 └── README.md

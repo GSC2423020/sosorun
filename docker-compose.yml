@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: sosorun-postgres
+    restart: unless-stopped
+
+    # .env 파일에서 값을 읽어옵니다(실제 .env는 커밋 금지!)
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: ${TZ}
+
+    ports:
+      # 내 PC(WSL/Windows)에서 5432로 접속 가능
+      - "5432:5432"
+
+    volumes:
+      # DB 데이터 영구 보관(컨테이너 삭제해도 데이터 유지)
+      - pg_data:/var/lib/postgresql/data
+
+      # 컨테이너 최초 생성 시 실행되는 초기 SQL
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  pg_data:
