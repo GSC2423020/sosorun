@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// =========================================
+// Prisma schema
+// - DB 테이블 구조를 "코드로" 정의하는 파일
+// - migrate 하면 이 정의를 기준으로 DB에 테이블이 생성됩니다.
+// =========================================
+
+generator client {
+  provider = "prisma-client-js" // Prisma Client(쿼리용 코드)를 생성
+}
+
+datasource db {
+  provider = "postgresql"       // DB 종류: PostgreSQL
+}
+
+// =========================================
+// 예시 모델(나중에 sosorun 도메인으로 교체/확장)
+// =========================================
+model User {
+  id        String   @id @default(cuid()) // cuid(): 충돌 확률 낮은 문자열 ID
+  email     String   @unique              // 이메일 중복 금지
+  name      String?                       // ? = null 허용
+  createdAt DateTime @default(now())      // 생성 시각 자동 저장
+
+  @@map("users") // 실제 DB 테이블 이름을 users로 지정
+}
