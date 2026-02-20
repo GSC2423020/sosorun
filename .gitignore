@@ -1,3 +1,8 @@
+# =========================================
+# sosorun project .gitignore
+# (Next.js + NestJS)
+# =========================================
+
 # =========================
 # OS / Editor
 # =========================
@@ -36,14 +41,19 @@ next-env.d.ts
 # NestJS / TS build
 # =========================
 dist/
-coverage/
 *.tsbuildinfo
 
 # =========================
-# Env (절대 커밋 금지)
+# Test / Coverage
+# =========================
+coverage/
+
+# =========================
+# Env
 # =========================
 .env
-.env.*.local
+.env.*
+!.env.example
 
 # =========================
 # Turbo / caches / temp
@@ -51,3 +61,6 @@ coverage/
 .turbo/
 tmp/
 temp/
+*~
+*.bak
+*.swp
