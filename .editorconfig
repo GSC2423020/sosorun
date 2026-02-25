@@ -1,0 +1,53 @@
+# 이 파일이 프로젝트 최상위 설정임을 의미
+# (상위 폴더로 더 이상 올라가서 설정 찾지 않음)
+root = true
+
+
+# 모든 파일에 적용되는 기본 규칙
+[*]
+
+# 문자 인코딩을 UTF-8로 통일
+# (한글 깨짐 방지)
+charset = utf-8
+
+# 줄바꿈 방식을 LF로 통일
+# (Windows는 CRLF, Linux는 LF → 차이 방지)
+end_of_line = lf
+
+# 파일 끝에 빈 줄 하나 자동 추가
+# (Git diff 정리용)
+insert_final_newline = true
+
+# 들여쓰기는 탭 대신 스페이스 사용
+indent_style = space
+
+# 기본 들여쓰기 크기 = 4칸
+indent_size = 4
+
+# 줄 끝에 불필요한 공백 자동 제거
+trim_trailing_whitespace = true
+
+
+
+# Markdown 파일(.md)만 별도 규칙
+[*.md]
+
+# Markdown은 줄 끝 공백 의미가 있을 수 있어서 제거 안 함
+trim_trailing_whitespace = false
+
+# Markdown은 보통 2칸 들여쓰기 사용
+indent_size = 2
+
+
+
+# yml 파일은 2칸 들여쓰기
+[*.yml]
+indent_size = 2
+
+# yaml 파일도 2칸
+[*.yaml]
+indent_size = 2
+
+# json 파일도 2칸
+[*.json]
+indent_size = 2
